@@ -13,7 +13,6 @@
 
 #include <stdlib.h>
 #include <stdint.h>
-#include <stdio.h>
 
 typedef struct {
     void (*fn)(const char *text, void* data);
@@ -26,12 +25,12 @@ static SECP256K1_INLINE void secp256k1_callback_call(const secp256k1_callback * 
 
 #ifdef DETERMINISTIC
 #define TEST_FAILURE(msg) do { \
-    fprintf(stderr, "%s\n", msg); \
+    /* fprintf(stderr, "%s\n", msg); */ \
     abort(); \
 } while(0);
 #else
 #define TEST_FAILURE(msg) do { \
-    fprintf(stderr, "%s:%d: %s\n", __FILE__, __LINE__, msg); \
+    /* fprintf(stderr, "%s:%d: %s\n", __FILE__, __LINE__, msg); */ \
     abort(); \
 } while(0)
 #endif
