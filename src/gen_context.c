@@ -13,6 +13,8 @@
 #include "group_impl.h"
 #include "ecmult_gen_impl.h"
 
+#include <stdio.h>
+
 static void default_error_callback_fn(const char* str, void* data) {
     (void)data;
     fprintf(stderr, "[libsecp256k1] internal consistency check failed: %s\n", str);
