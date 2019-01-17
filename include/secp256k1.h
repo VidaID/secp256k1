@@ -131,7 +131,7 @@ typedef int (*secp256k1_nonce_function)(
 #  ifdef SECP256K1_BUILD
 #   define SECP256K1_API __declspec(dllexport)
 #  else
-#   define SECP256K1_API
+#   define SECP256K1_API __declspec(dllimport)
 #  endif
 # elif defined(__GNUC__) && defined(SECP256K1_BUILD)
 #  define SECP256K1_API __attribute__ ((visibility ("default")))
